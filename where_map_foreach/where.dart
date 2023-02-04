@@ -1,7 +1,11 @@
+// Tawfik Mohamed
+// Task_1
 void main(List<String> args) {
   // Use the where method to filter a List of integers and only keep values greater than 3.
   List<int> numbers2 = [1, 2, 3, 4, 5];
-  List<int> filteredNumbers;
+  List<int> filteredNumbers=numbers2.where((element) => element>3).toList(); // <= solution
+
+  print(filteredNumbers);
   // output should be [4, 5]
 
   // Use the where method to filter a List of strings and only keep values that start with the letter "A".
@@ -13,8 +17,10 @@ void main(List<String> args) {
     'Mohamed',
     'Ali'
   ];
-  List<String> filteredNames;
+  List<String> filteredNames=names2.where((element) => element[0]=='A').toList();// <= solution
   //output should be ['Ahmed', 'Ali']
+  print(filteredNames);
+
 
   // Use the where method to filter a List of strings and only keep values that start with the letter "A" and end with the letter "d".
   List<String> names3 = [
@@ -25,13 +31,17 @@ void main(List<String> args) {
     'Mohamed',
     'Ali'
   ];
-  List<String> filteredNames2;
+  List<String> filteredNames2=names3.where((element) => (element[0]=='A' && element[element.length-1]=='d')).toList();// <= solution
+  print(filteredNames2);
   //output should be ['Ahmed']
+  
 
   // DONT USE FOR LOOP  find the first number that is greater than 4 in the list
   List<int> numbers3 = [1, 2, 3, 5, 9, 10];
-  int firstNumberGreaterThan4;
+  int firstNumberGreaterThan4=numbers3.firstWhere((element) => element>4); // <= solution
   // output should be 5
+  print(firstNumberGreaterThan4);
+
 
   // MORE ADVANCED
   // Use the where method to find all elements in a List of maps that have a value of "John" for the key "name"
@@ -40,6 +50,8 @@ void main(List<String> args) {
     {'name': 'Jane', 'age': '25'},
     {'name': 'Jim', 'age': '35'}
   ];
-  List<Map<String, String>> johns;
+  List<Map<String, String>> johns=[];
+  johns.addAll(people.where((element) => element.containsKey('name') && element.containsValue('John')));
+  print(johns);
   // output should be [{'name': 'John', 'age': '30'}]
 }
