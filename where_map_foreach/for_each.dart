@@ -68,16 +68,31 @@ void main(List<String> args) {
   Map<String, int> sortedAlphabets={};
   // output should be {'a': 1, 'b': 2, 'c': 3} 
   List<String>a=[];
+  List<int>b=[];
   alphabets.forEach((key, value) {
     a.add(key);
+    b.add(value);
   });
   a.sort();
+  b.sort();
   a.forEach((element) {
       dynamic x;
       x=alphabets[element];
       sortedAlphabets[element]=x;
   });
   print(sortedAlphabets);
+  // print(sortedAlphabets);
+  // a.sort();
+  // print(a);
+  // alphabets.forEach((key, value) {
+    // a.forEach((element) {
+    //   sortedAlphabets[element]=alphabets[key];
+    // });
+  // });
+    // sortedAlphabets[element]=alphabets[];
+  // });
+  // print(alphabets);
+
 
   // Filter the map using for each if the value is greater than 3
   Map<String, int> map2 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5};
